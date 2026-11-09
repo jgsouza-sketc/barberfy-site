@@ -13,7 +13,7 @@ import telaPresenca from "@/assets/tela-presenca-digital.png.asset.json";
 import telaPersonalizacao from "@/assets/tela-personalizacao.png.asset.json";
 import telaNotificacoes from "@/assets/tela-notificacoes.png.asset.json";
 import telaConfiguracoes from "@/assets/tela-configuracoes.png.asset.json";
-import telaAcessoMobile from "@/assets/tela-acesso-mobile.png.asset.json";
+import telaAcessoMobile from "@/assets/tela-acesso-celular.png.asset.json";
 
 /*
  * All editable site content lives here: links, modules, real screenshots, plans and FAQ.

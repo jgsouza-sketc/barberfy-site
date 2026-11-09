@@ -62,9 +62,9 @@ export function Hero() {
             <img
               src={mobileScreen.src}
               alt={mobileScreen.alt}
-              width={246}
-              height={298}
-              className="absolute inset-x-0 top-1/2 w-full -translate-y-1/2"
+              width={482}
+              height={1018}
+              className="absolute inset-0 size-full object-cover"
               loading="lazy"
             />
           </PhoneFrame>

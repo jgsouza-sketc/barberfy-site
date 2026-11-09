@@ -27,7 +27,11 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
-        scrolled || open ? "glass-nav border-border" : "border-transparent",
+        open
+          ? "border-border bg-background"
+          : scrolled
+            ? "glass-nav border-border"
+            : "border-transparent",
       )}
     >
       <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:h-[72px]">

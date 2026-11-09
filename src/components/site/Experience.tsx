@@ -116,10 +116,10 @@ export function Experience() {
               <img
                 src={mobileScreen.src}
                 alt={mobileScreen.alt}
-                width={246}
-                height={298}
+                width={482}
+                height={1018}
                 loading="lazy"
-                className="absolute inset-x-0 top-1/2 w-full -translate-y-1/2"
+                className="absolute inset-0 size-full object-cover"
               />
             </PhoneFrame>
           </Reveal>
