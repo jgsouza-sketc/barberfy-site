@@ -36,7 +36,9 @@ export function Pricing() {
                   <h3 className="text-lg font-semibold">{plan.name}</h3>
                   <p className="mt-6 flex items-baseline gap-1">
                     <span className="text-lg text-muted-foreground">R$</span>
-                    <span className="font-display text-5xl font-bold tracking-tight">{plan.price}</span>
+                    <span className="font-display text-5xl font-bold tracking-tight">
+                      {plan.price}
+                    </span>
                     <span className="text-sm text-muted-foreground">{plan.period}</span>
                   </p>
                   <div className="my-7 h-px bg-border" />
@@ -51,7 +53,12 @@ export function Pricing() {
                       Recursos e limites deste plano disponíveis na plataforma.
                     </p>
                   )}
-                  <Button asChild variant="glass" size="xl" className="mt-8 w-full group-hover:border-primary/40">
+                  <Button
+                    asChild
+                    variant="glass"
+                    size="xl"
+                    className="mt-8 w-full group-hover:border-primary/40"
+                  >
                     <a href={links.platform} target="_blank" rel="noopener noreferrer">
                       Conhecer a Barberfy <ArrowRight />
                     </a>

@@ -78,38 +78,46 @@ export const modules: Module[] = [
 /* Real captures of the platform (personal data blurred). */
 export type Screen = { id: string; title: string; description: string; src: string; alt: string };
 
-export const screens: Screen[] = [
-  {
-    id: "presenca",
-    title: "Presença digital",
-    description:
-      "Seu link exclusivo, a identidade da sua barbearia e as prévias do que o cliente vê.",
-    src: telaPresenca.url,
-    alt: "Tela Minha presença digital da Barberfy com os links públicos da barbearia",
-  },
-  {
-    id: "personalizacao",
-    title: "Personalização",
-    description: "Identidade visual, tela de acesso e dados exibidos na página pública.",
-    src: telaPersonalizacao.url,
-    alt: "Tela de personalização da Barberfy com cores, logo e prévia em tempo real",
-  },
-  {
-    id: "notificacoes",
-    title: "Notificações",
-    description:
-      "Avisos internos de novos agendamentos, confirmações, cancelamentos e remanejamentos.",
-    src: telaNotificacoes.url,
-    alt: "Tela de notificações internas da Barberfy",
-  },
-  {
-    id: "configuracoes",
-    title: "Configurações",
-    description: "Dados da barbearia, horários, regras de agendamento e assinatura.",
-    src: telaConfiguracoes.url,
-    alt: "Tela de configurações da barbearia na Barberfy",
-  },
-];
+const presenca: Screen = {
+  id: "presenca",
+  title: "Presença digital",
+  description:
+    "Seu link exclusivo, a identidade da sua barbearia e as prévias do que o cliente vê.",
+  src: telaPresenca.url,
+  alt: "Tela Minha presença digital da Barberfy com os links públicos da barbearia",
+};
+
+const personalizacao: Screen = {
+  id: "personalizacao",
+  title: "Personalização",
+  description: "Identidade visual, tela de acesso e dados exibidos na página pública.",
+  src: telaPersonalizacao.url,
+  alt: "Tela de personalização da Barberfy com cores, logo e prévia em tempo real",
+};
+
+const notificacoes: Screen = {
+  id: "notificacoes",
+  title: "Notificações",
+  description:
+    "Avisos internos de novos agendamentos, confirmações, cancelamentos e remanejamentos.",
+  src: telaNotificacoes.url,
+  alt: "Tela de notificações internas da Barberfy",
+};
+
+const configuracoes: Screen = {
+  id: "configuracoes",
+  title: "Configurações",
+  description: "Dados da barbearia, horários, regras de agendamento e assinatura.",
+  src: telaConfiguracoes.url,
+  alt: "Tela de configurações da barbearia na Barberfy",
+};
+
+export const screens: Screen[] = [presenca, personalizacao, notificacoes, configuracoes];
+export const featuredScreens = {
+  hero: presenca,
+  aboutBack: configuracoes,
+  aboutFront: personalizacao,
+};
 
 export const mobileScreen = {
   src: telaAcessoMobile.url,

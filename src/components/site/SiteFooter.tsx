@@ -12,8 +12,8 @@ export function SiteFooter() {
         <div className="max-w-sm">
           <Logo />
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Plataforma de gestão desenvolvida para barbearias organizarem a operação e
-            acompanharem as informações importantes do negócio.
+            Plataforma de gestão desenvolvida para barbearias organizarem a operação e acompanharem
+            as informações importantes do negócio.
           </p>
         </div>
 

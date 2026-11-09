@@ -1,11 +1,11 @@
 import { Check } from "lucide-react";
 
-import { modules, screens } from "@/content/barberfy";
+import { featuredScreens, modules } from "@/content/barberfy";
 import { Reveal } from "./Reveal";
 
 export function About() {
-  const back = screens[3];
-  const front = screens[1];
+  const back = featuredScreens.aboutBack;
+  const front = featuredScreens.aboutFront;
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
@@ -43,10 +43,24 @@ export function About() {
           <div aria-hidden className="glow-orb absolute -right-10 top-10 size-80" />
           <div className="relative">
             <figure className="w-[85%] -rotate-2 overflow-hidden rounded-xl border border-border shadow-device transition-transform duration-500 hover:rotate-0">
-              <img src={back.src} alt={back.alt} width={1055} height={712} loading="lazy" className="w-full" />
+              <img
+                src={back.src}
+                alt={back.alt}
+                width={1055}
+                height={712}
+                loading="lazy"
+                className="w-full"
+              />
             </figure>
             <figure className="relative -mt-[38%] ml-auto w-[80%] rotate-2 overflow-hidden rounded-xl border border-primary/25 shadow-device transition-transform duration-500 hover:rotate-0">
-              <img src={front.src} alt={front.alt} width={1043} height={703} loading="lazy" className="w-full" />
+              <img
+                src={front.src}
+                alt={front.alt}
+                width={1043}
+                height={703}
+                loading="lazy"
+                className="w-full"
+              />
             </figure>
           </div>
         </Reveal>

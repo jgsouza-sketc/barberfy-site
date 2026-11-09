@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { links, mobileScreen, screens } from "@/content/barberfy";
+import { featuredScreens, links, mobileScreen } from "@/content/barberfy";
 import { LaptopFrame, PhoneFrame } from "./Devices";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
-  const main = screens[0];
+  const main = featuredScreens.hero;
   return (
     <section id="inicio" className="relative overflow-hidden pt-32 sm:pt-40">
       <div aria-hidden className="bg-grid absolute inset-0" />
@@ -35,7 +35,10 @@ export function Hero() {
               com a Barberfy.
             </p>
           </Reveal>
-          <Reveal delay={240} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Reveal
+            delay={240}
+            className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          >
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
               <a href={links.platform} target="_blank" rel="noopener noreferrer">
                 Conhecer a plataforma <ArrowRight />
@@ -70,7 +73,10 @@ export function Hero() {
           </PhoneFrame>
         </Reveal>
       </div>
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-[image:var(--gradient-fade)]" />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-40 bg-[image:var(--gradient-fade)]"
+      />
     </section>
   );
 }
