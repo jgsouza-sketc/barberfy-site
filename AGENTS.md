@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- All marketing copy, links, modules, plans, FAQ and screenshot references live in `src/content/barberfy.ts`; sections in `src/components/site/` only render it. Why: content must be easy to update and stay limited to real product facts.
+- Platform screenshots are real captures with personal data blurred before upload as Lovable assets. Why: the site must never show invented screens or customer data.
