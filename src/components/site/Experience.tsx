@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 import { mobileScreen, screens } from "@/content/barberfy";
 import { cn } from "@/lib/utils";
@@ -84,7 +84,7 @@ export function Experience() {
                         key={`${active}-${cycle}`}
                         aria-hidden
                         className="animate-progress absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-emerald"
-                        style={{ "--progress-duration": `${INTERVAL}ms` } as React.CSSProperties}
+                        style={{ "--progress-duration": `${INTERVAL}ms` } as CSSProperties}
                       />
                     )}
                   </button>
