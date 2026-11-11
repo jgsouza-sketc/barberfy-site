@@ -1,10 +1,12 @@
 /*
  * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
- * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ * Keep every @import in this top block. Web fonts are self-hosted (Fontsource) so no visitor data goes to Google.
  */
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource-variable/manrope/wght.css";
+@import "@fontsource-variable/sora/wght.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,8 +16,8 @@
  */
 
 @theme inline {
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora Variable", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
