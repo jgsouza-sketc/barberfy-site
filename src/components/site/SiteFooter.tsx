@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 
 import { links, modules, nav, plans } from "@/content/barberfy";
@@ -58,9 +59,12 @@ export function SiteFooter() {
         </FooterCol>
       </div>
       <div className="border-t border-border">
-        <p className="mx-auto max-w-7xl px-5 py-6 text-xs text-muted-foreground sm:px-8">
-          © {year} Barberfy. Todos os direitos reservados.
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-6 text-xs text-muted-foreground sm:px-8">
+          <p>© {year} Barberfy. Todos os direitos reservados.</p>
+          <Link to="/privacidade" className="transition-colors hover:text-primary">
+            Política de Privacidade
+          </Link>
+        </div>
       </div>
     </footer>
   );

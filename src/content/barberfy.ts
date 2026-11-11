@@ -186,3 +186,66 @@ export const faq = [
     a: `Pelo canal oficial da plataforma ou pelo Instagram ${links.instagramHandle}.`,
   },
 ];
+
+/*
+ * Privacy policy (LGPD). Describes only what this institutional site actually does:
+ * no forms, no sign-up, no own analytics or advertising cookies.
+ * Pending: legal name, CNPJ and a dedicated privacy e-mail, to be added when provided.
+ */
+export const privacyPolicy = {
+  updatedAt: "11 de novembro de 2026",
+  sections: [
+    {
+      title: "Sobre esta política",
+      paragraphs: [
+        "Esta Política de Privacidade explica como o site institucional da Barberfy trata as informações de quem o visita, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+        "Ela vale apenas para este site de apresentação. O uso da plataforma Barberfy, acessada pelo botão “Conhecer a Barberfy”, segue os termos e a política exibidos na própria plataforma.",
+      ],
+    },
+    {
+      title: "Quais dados este site coleta",
+      paragraphs: [
+        "Este site não possui formulários, não pede cadastro e não solicita dados pessoais como nome, e-mail ou telefone.",
+        "Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso — como endereço IP, tipo de navegador, página visitada, data e horário — e estatísticas gerais de visitas. Esses registros servem para manter o site funcionando, seguro e protegido contra abusos.",
+      ],
+    },
+    {
+      title: "Cookies",
+      paragraphs: [
+        "Este site não utiliza cookies próprios de publicidade, de rastreamento ou de análise de comportamento. Por isso, não exibimos aviso de consentimento de cookies.",
+        "As fontes e imagens do site são carregadas do próprio domínio, sem envio de dados para serviços de terceiros. Se passarmos a usar cookies não essenciais, pediremos seu consentimento antes e você poderá recusá-los.",
+      ],
+    },
+    {
+      title: "Finalidade e base legal",
+      paragraphs: [
+        "Os dados técnicos de acesso são tratados com base no legítimo interesse (art. 7º, IX, da LGPD), apenas para garantir o funcionamento, a segurança e a estabilidade do site. Eles não são vendidos nem usados para publicidade.",
+      ],
+    },
+    {
+      title: "Links para outros sites",
+      paragraphs: [
+        "Este site contém links para a plataforma Barberfy e para o nosso perfil no Instagram. Ao acessá-los, você passa a estar sujeito às políticas de privacidade desses serviços.",
+      ],
+    },
+    {
+      title: "Segurança",
+      paragraphs: [
+        "O site é servido por conexão criptografada (HTTPS) e adota medidas técnicas para reduzir riscos, como cabeçalhos de segurança e proteção contra a exibição do site dentro de páginas de terceiros.",
+      ],
+    },
+    {
+      title: "Seus direitos",
+      paragraphs: [
+        "Pela LGPD, você pode solicitar: confirmação de que tratamos seus dados; acesso aos dados; correção de dados incompletos, inexatos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informações sobre compartilhamento; e revogação de consentimento, quando for o caso. Você também pode se opor a um tratamento e apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).",
+        `Para fazer uma solicitação de acesso, correção ou exclusão, entre em contato pelo canal oficial da plataforma ou pelo Instagram ${links.instagramHandle}.`,
+      ],
+    },
+    {
+      title: "Alterações nesta política",
+      paragraphs: [
+        "Esta política pode ser atualizada para refletir mudanças no site ou na legislação. A data da última atualização aparece no topo desta página.",
+      ],
+    },
+  ],
+};
