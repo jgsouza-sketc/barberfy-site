@@ -33,3 +33,5 @@ use the editor.
 
 - All marketing copy, links, modules, plans, FAQ and screenshot references live in `src/content/barberfy.ts`; sections in `src/components/site/` only render it. Why: content must be easy to update and stay limited to real product facts.
 - Platform screenshots are real captures with personal data blurred before upload as Lovable assets. Why: the site must never show invented screens or customer data.
+- HTTP security headers are added in `src/server.ts` via `src/lib/security-headers.ts`; framing protection is skipped on Lovable preview hosts and localhost. Why: protects the published site without breaking the editor preview iframe.
+- Web fonts are self-hosted with Fontsource packages imported in `src/styles.css`, never loaded from Google Fonts. Why: avoids sending visitor IPs to third parties (LGPD) and keeps the privacy policy accurate.
