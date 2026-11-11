@@ -155,9 +155,9 @@ export const benefits = [
 export type Plan = { name: string; price: string; period: string; features: string[] };
 
 export const plans: Plan[] = [
-  { name: "Plano Inicial", price: "29,90", period: "/mês", features: [] },
-  { name: "Plano Intermediário", price: "49,90", period: "/mês", features: [] },
-  { name: "Plano Avançado", price: "79,90", period: "/mês", features: [] },
+  { name: "Plano Inicial", price: "59,90", period: "/mês", features: [] },
+  { name: "Plano Intermediário", price: "99,90", period: "/mês", features: [] },
+  { name: "Plano Avançado", price: "149,90", period: "/mês", features: [] },
 ];
 
 export const faq = [
@@ -175,7 +175,7 @@ export const faq = [
   },
   {
     q: "Quais são os planos disponíveis?",
-    a: "Hoje são três planos mensais, com valores de R$ 29,90, R$ 49,90 e R$ 79,90. Os detalhes de cada plano são apresentados na plataforma.",
+    a: "Hoje são três planos mensais, com valores de R$ 59,90, R$ 99,90 e R$ 149,90. Os detalhes de cada plano são apresentados na plataforma.",
   },
   {
     q: "Como posso conhecer a plataforma?",

@@ -4,7 +4,7 @@ import { links, modules, plans } from "@/content/barberfy";
 
 describe("Barberfy site content", () => {
   it("shows the three reference plan prices", () => {
-    expect(plans.map((p) => p.price)).toEqual(["29,90", "49,90", "79,90"]);
+    expect(plans.map((p) => p.price)).toEqual(["59,90", "99,90", "149,90"]);
   });
 
   it("does not invent differences between plans", () => {
