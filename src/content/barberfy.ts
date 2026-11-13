@@ -261,12 +261,12 @@ export const privacyPolicy: { updatedAt: string; sections: PolicySection[] } = {
     },
     {
       title: "6. Finalidades e bases legais",
+      paragraphs: ["Cada tratamento tem uma finalidade definida e uma base legal prevista na LGPD:"],
       items: [
         "Funcionamento, segurança e estabilidade do site (registros técnicos e cookie de segurança): legítimo interesse (art. 7º, IX, da LGPD).",
         "Estatísticas gerais de uso, para entender como o site é visitado e melhorá-lo, sem identificar visitantes: legítimo interesse (art. 7º, IX, da LGPD).",
         "Guarda de registros de acesso quando exigida por lei: cumprimento de obrigação legal (art. 7º, II, da LGPD).",
       ],
-      paragraphs: ["Os dados não são vendidos nem usados para publicidade."],
     },
     {
       title: "7. Armazenamento e retenção",
@@ -336,7 +336,7 @@ export const privacyPolicy: { updatedAt: string; sections: PolicySection[] } = {
         "Como o site não coleta nome, e-mail ou outros dados de identificação, e as estatísticas não guardam endereços IP, pode não ser possível associar registros técnicos a uma pessoa. Nesse caso, explicaremos o motivo na resposta.",
         "Se não ficar satisfeito com a resposta, você pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).",
       ],
-      links: [{ label: "Site da ANPD", href: "https://www.gov.br/anpd" }],
+      links: [{ label: "Site da ANPD", href: "https://www.gov.br/anpd/pt-br" }],
     },
     {
       title: "14. Alterações nesta política",
