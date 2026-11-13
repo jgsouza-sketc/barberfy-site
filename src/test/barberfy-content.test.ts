@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { links, modules, plans } from "@/content/barberfy";
+import { links, modules, plans, privacyController, privacyPolicy } from "@/content/barberfy";
 
 describe("Barberfy site content", () => {
   it("shows the three reference plan prices", () => {
@@ -26,5 +26,18 @@ describe("Barberfy site content", () => {
       "Financeiro",
       "Relatórios e Indicadores",
     ]);
+  });
+
+  it("does not invent company legal data in the privacy policy", () => {
+    expect(privacyController.legalName).toBeNull();
+    expect(privacyController.cnpj).toBeNull();
+    expect(privacyController.privacyEmail).toBeNull();
+  });
+
+  it("states the analytics retention of 90 days detailed and 1 year summaries", () => {
+    const retention = privacyPolicy.sections.find((s) => s.title.includes("Armazenamento"));
+    const text = retention?.items?.join(" ") ?? "";
+    expect(text).toContain("90 dias");
+    expect(text).toContain("1 ano");
   });
 });

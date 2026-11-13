@@ -188,63 +188,160 @@ export const faq = [
 ];
 
 /*
- * Privacy policy (LGPD). Describes only what this institutional site actually does:
- * no forms, no sign-up, no own analytics or advertising cookies.
- * Pending: legal name, CNPJ and a dedicated privacy e-mail, to be added when provided.
+ * Privacy policy (LGPD). Describes only what this institutional site actually does,
+ * checked against the published site: no forms or sign-up; Lovable visitor analytics
+ * (cookieless, click tracking on); hosting on Lovable over Cloudflare, which sets the
+ * essential `__cf_bm` bot-protection cookie (30 min); fonts and images served from the
+ * site's own domain; no ads or other trackers.
+ * Pending owner input: legal name, CNPJ, dedicated privacy e-mail and Encarregado (DPO).
+ * Fill the `null` fields below when provided; the page shows them as pending until then.
  */
-export const privacyPolicy = {
-  updatedAt: "11 de novembro de 2026",
+export type PolicySection = {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+  links?: { label: string; href: string }[];
+};
+
+export const privacyController = {
+  name: "Barberfy",
+  role: "Responsável pelo site institucional e pela plataforma de gestão Barberfy.",
+  legalName: null as string | null,
+  cnpj: null as string | null,
+  privacyEmail: null as string | null,
+  dpo: null as string | null,
+  pendingText: "A ser informado",
+  pendingEmailNote: `Enquanto o e-mail dedicado não é publicado, envie sua solicitação pelo Instagram ${links.instagramHandle} ou pelo canal de atendimento da plataforma Barberfy.`,
+};
+
+export const privacyPolicy: { updatedAt: string; sections: PolicySection[] } = {
+  updatedAt: "13 de novembro de 2026",
   sections: [
     {
-      title: "Sobre esta política",
+      title: "1. Sobre esta política",
       paragraphs: [
-        "Esta Política de Privacidade explica como o site institucional da Barberfy trata as informações de quem o visita, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
-        "Ela vale apenas para este site de apresentação. O uso da plataforma Barberfy, acessada pelo botão “Conhecer a Barberfy”, segue os termos e a política exibidos na própria plataforma.",
+        "Esta Política de Privacidade explica como o site institucional da Barberfy trata as informações de quem o visita, conforme a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).",
+        "Ela vale apenas para este site de apresentação. O uso da plataforma Barberfy, acessada pelo botão “Conhecer a Barberfy”, segue os termos e a política de privacidade exibidos na própria plataforma.",
       ],
     },
     {
-      title: "Quais dados este site coleta",
+      title: "2. Quais dados este site trata",
       paragraphs: [
-        "Este site não possui formulários, não pede cadastro e não solicita dados pessoais como nome, e-mail ou telefone.",
-        "Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso — como endereço IP, tipo de navegador, página visitada, data e horário — e estatísticas gerais de visitas. Esses registros servem para manter o site funcionando, seguro e protegido contra abusos.",
+        "Este site não possui formulários, não pede cadastro e não solicita dados como nome, e-mail ou telefone. Mesmo assim, como em qualquer site na internet, algumas informações técnicas são tratadas automaticamente quando você o acessa:",
+      ],
+      items: [
+        "Registros técnicos de acesso: endereço IP, data e horário, página solicitada, tipo de navegador e endereço de origem da visita, gerados pela infraestrutura de hospedagem ao entregar as páginas.",
+        "Estatísticas de visitas: páginas visitadas, de onde o visitante veio, país, navegador, sistema operacional, tipo de dispositivo, tempo de permanência, velocidade de carregamento, erros e cliques em botões e links.",
+        "Cookie de segurança: um cookie técnico usado pela rede de entrega do site para proteção contra acessos automatizados (detalhado na seção 5).",
       ],
     },
     {
-      title: "Cookies",
+      title: "3. Registros técnicos de acesso",
       paragraphs: [
-        "Este site não utiliza cookies próprios de publicidade, de rastreamento ou de análise de comportamento. Por isso, não exibimos aviso de consentimento de cookies.",
-        "As fontes e imagens do site são carregadas do próprio domínio, sem envio de dados para serviços de terceiros. Se passarmos a usar cookies não essenciais, pediremos seu consentimento antes e você poderá recusá-los.",
+        "Os registros técnicos são gerados automaticamente pelos servidores que entregam o site sempre que um navegador solicita uma página. Eles são necessários para que o site funcione, para identificar falhas e para proteger o site contra abusos, como ataques e acessos automatizados em massa.",
+        "A Barberfy não usa esses registros para identificar visitantes, criar perfis, enviar publicidade ou cruzá-los com outras bases de dados, e não os vende a ninguém.",
       ],
     },
     {
-      title: "Finalidade e base legal",
+      title: "4. Estatísticas de visitas (Analytics)",
       paragraphs: [
-        "Os dados técnicos de acesso são tratados com base no legítimo interesse (art. 7º, IX, da LGPD), apenas para garantir o funcionamento, a segurança e a estabilidade do site. Eles não são vendidos nem usados para publicidade.",
+        "O site usa a ferramenta de estatísticas da Lovable, plataforma em que ele é construído e hospedado. Ela registra, para todos os visitantes, as páginas visitadas, de onde o visitante veio, país, navegador, sistema operacional, tipo de dispositivo (computador, celular ou tablet), tempo de permanência, velocidade de carregamento das páginas, erros e cliques em botões e links.",
+        "Essa ferramenta não usa cookies, não armazena nada no seu dispositivo, não guarda endereços IP e não identifica quem é o visitante. Cada visita é contada de forma independente.",
+        "A Lovable coleta esses dados para nós. A política de privacidade da Lovable explica como ela os trata.",
+      ],
+      links: [{ label: "Política de privacidade da Lovable", href: "https://lovable.dev/privacy" }],
+    },
+    {
+      title: "5. Cookies",
+      paragraphs: [
+        "O site não usa cookies de publicidade, de rastreamento ou de análise de comportamento, e não utiliza pixels de anúncios, redes sociais incorporadas ou outras ferramentas de rastreamento.",
+        "A rede de entrega do site (Cloudflare, usada pela hospedagem) pode gravar no seu navegador um cookie técnico chamado “__cf_bm”. Ele serve para diferenciar visitantes reais de acessos automatizados, protegendo o site, e expira em cerca de 30 minutos.",
+        "As fontes e imagens do site são carregadas do próprio domínio, sem envio de dados para serviços como Google Fonts. Você pode bloquear ou apagar cookies nas configurações do seu navegador. Se o site passar a usar cookies não essenciais, esta política será atualizada antes.",
       ],
     },
     {
-      title: "Links para outros sites",
-      paragraphs: [
-        "Este site contém links para a plataforma Barberfy e para o nosso perfil no Instagram. Ao acessá-los, você passa a estar sujeito às políticas de privacidade desses serviços.",
+      title: "6. Finalidades e bases legais",
+      paragraphs: ["Cada tratamento tem uma finalidade definida e uma base legal prevista na LGPD:"],
+      items: [
+        "Funcionamento, segurança e estabilidade do site (registros técnicos e cookie de segurança): legítimo interesse (art. 7º, IX, da LGPD).",
+        "Estatísticas gerais de uso, para entender como o site é visitado e melhorá-lo, sem identificar visitantes: legítimo interesse (art. 7º, IX, da LGPD).",
+        "Guarda de registros de acesso quando exigida por lei: cumprimento de obrigação legal (art. 7º, II, da LGPD).",
       ],
     },
     {
-      title: "Segurança",
+      title: "7. Armazenamento e retenção",
       paragraphs: [
-        "O site é servido por conexão criptografada (HTTPS) e adota medidas técnicas para reduzir riscos, como cabeçalhos de segurança e proteção contra a exibição do site dentro de páginas de terceiros.",
+        "Os dados são mantidos apenas pelo tempo necessário para as finalidades acima ou para cumprir obrigações legais. Os critérios são:",
+      ],
+      items: [
+        "Estatísticas de visitas: os dados detalhados ficam guardados por 90 dias, e os resumos diários (contagem de visitas e páginas vistas) por até 1 ano.",
+        "Registros técnicos de acesso: mantidos pelos fornecedores de hospedagem pelo prazo definido em suas políticas. Quando a lei exigir guarda mínima — como o art. 15 do Marco Civil da Internet (Lei nº 12.965/2014), que prevê 6 meses para registros de acesso a aplicações —, esse prazo será respeitado.",
+        "Cookie de segurança “__cf_bm”: expira automaticamente em cerca de 30 minutos.",
       ],
     },
     {
-      title: "Seus direitos",
+      title: "8. Compartilhamento com fornecedores",
       paragraphs: [
-        "Pela LGPD, você pode solicitar: confirmação de que tratamos seus dados; acesso aos dados; correção de dados incompletos, inexatos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informações sobre compartilhamento; e revogação de consentimento, quando for o caso. Você também pode se opor a um tratamento e apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).",
-        `Para fazer uma solicitação de acesso, correção ou exclusão, entre em contato pelo canal oficial da plataforma ou pelo Instagram ${links.instagramHandle}.`,
+        "Para manter o site no ar, os dados técnicos são tratados pelos fornecedores de tecnologia que fazem a hospedagem e a entrega das páginas:",
+      ],
+      items: [
+        "Lovable: plataforma de criação e hospedagem do site e responsável pela ferramenta de estatísticas de visitas.",
+        "Cloudflare: rede de entrega e proteção usada pela hospedagem, que recebe as conexões dos visitantes e grava o cookie de segurança.",
+      ],
+      links: [
+        { label: "Política de privacidade da Lovable", href: "https://lovable.dev/privacy" },
+        { label: "Política de privacidade da Cloudflare", href: "https://www.cloudflare.com/privacypolicy/" },
       ],
     },
     {
-      title: "Alterações nesta política",
+      title: "9. Transferência internacional de dados",
       paragraphs: [
-        "Esta política pode ser atualizada para refletir mudanças no site ou na legislação. A data da última atualização aparece no topo desta página.",
+        "Os fornecedores de hospedagem citados acima operam servidores em vários países. Por isso, os dados técnicos de acesso e as estatísticas de visitas podem ser tratados fora do Brasil — por exemplo, no servidor da rede de entrega mais próximo do visitante.",
+        "Essa transferência é necessária para que o site funcione e ocorre nos termos de uso e nas políticas de privacidade de cada fornecedor, observando o que a LGPD prevê para transferências internacionais (arts. 33 a 36).",
+      ],
+    },
+    {
+      title: "10. Links para outros sites",
+      paragraphs: [
+        "Este site contém links para a plataforma Barberfy e para o nosso perfil no Instagram. Esses serviços só são carregados se você clicar nos links e, a partir daí, você passa a estar sujeito às políticas de privacidade deles.",
+      ],
+    },
+    {
+      title: "11. Segurança",
+      paragraphs: [
+        "O site é servido apenas por conexão criptografada (HTTPS) e envia cabeçalhos de segurança aos navegadores, incluindo proteção contra a exibição do site dentro de páginas de terceiros. Nenhuma medida elimina todos os riscos, mas a Barberfy busca reduzir a exposição dos dados ao não coletar informações pessoais por formulários.",
+      ],
+    },
+    {
+      title: "12. Seus direitos",
+      paragraphs: ["Pelo art. 18 da LGPD, você pode solicitar, a qualquer momento e sem custo:"],
+      items: [
+        "Confirmação de que tratamos dados pessoais seus.",
+        "Acesso aos dados.",
+        "Correção de dados incompletos, inexatos ou desatualizados.",
+        "Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD.",
+        "Portabilidade dos dados a outro fornecedor, quando aplicável.",
+        "Informação sobre as entidades com as quais compartilhamos dados.",
+        "Informação sobre a possibilidade de não fornecer consentimento e suas consequências, e revogação do consentimento, quando o tratamento depender dele.",
+        "Oposição a tratamento baseado em legítimo interesse, quando houver descumprimento da LGPD.",
+        "Revisão de decisões tomadas unicamente com base em tratamento automatizado. Este site não toma decisões automatizadas sobre visitantes.",
+      ],
+    },
+    {
+      title: "13. Como exercer seus direitos",
+      items: [
+        "Envie sua solicitação pelo canal indicado em “Controlador e contato”, no início desta página, informando qual direito deseja exercer.",
+        "Para proteger seus dados, poderemos pedir informações que confirmem que você é o titular antes de atender o pedido.",
+        "A confirmação de existência ou o acesso aos dados podem ser fornecidos de forma simplificada imediatamente ou por declaração completa em até 15 dias, conforme o art. 19 da LGPD.",
+        "Como o site não coleta nome, e-mail ou outros dados de identificação, e as estatísticas não guardam endereços IP, pode não ser possível associar registros técnicos a uma pessoa. Nesse caso, explicaremos o motivo na resposta.",
+        "Se não ficar satisfeito com a resposta, você pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).",
+      ],
+      links: [{ label: "Site da ANPD", href: "https://www.gov.br/anpd/pt-br" }],
+    },
+    {
+      title: "14. Alterações nesta política",
+      paragraphs: [
+        "Esta política pode ser atualizada para refletir mudanças no site, nos fornecedores ou na legislação. A data da última atualização aparece no topo desta página.",
       ],
     },
   ],
