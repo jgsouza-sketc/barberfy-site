@@ -8,3 +8,4 @@
 - [x] Páginas de erro em português
 - [x] Verificar visual (desktop/mobile), links, erros e testes
 - [x] Relatório final
+- [x] Revisar e completar a Política de Privacidade (controlador, retenção, fornecedores, transferência internacional, direitos)
